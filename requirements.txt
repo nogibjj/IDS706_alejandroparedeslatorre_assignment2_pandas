@@ -4,5 +4,5 @@ pytest-cov==4.0.0
 pylint==2.15.3
 python-dateutil==2.9.0
 pandas==2.2.2
-numpy==2.1.1
+numpy==2.0.0
 ydata_profiling==4.10.0

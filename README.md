@@ -4,7 +4,7 @@ Second Assignment IDS-706 Alejandro Paredes La Torre
 [![CI](https://github.com/nogibjj/IDS706_alejandroparedeslatorre_template/actions/workflows/hello.yml/badge.svg)](https://github.com/nogibjj/IDS706_alejandroparedeslatorre_template/actions/workflows/hello.yml)
 
 
-This repo contains a brief implementation of basic descriptive metrics for the Boston Housing dataset . If you want to use this just refer this to a codespace in github and wait for the devcontainer to execute the Makefile that execute the following: install, format, lint, test.
+This repo contains a brief implementation of basic descriptive metrics for the Boston Housing dataset. If you want to use this just refer this to a codespace in github and wait for the devcontainer to execute the Makefile that execute the following: install, format, lint, test.
 
 According to the requirement it gets added
 
@@ -19,7 +19,7 @@ According to the requirement it gets added
 * `.devcontainer` for Githubcodespace 
 
 ## Purpose of project
-The purpose of this project is to have a python template that includes a main.py file that has only one function called print_custom_message(name, year, month, day) that takes as input a Name and a birthday split as year, month and day of birthday. This function returns the age of the input in years and months specified in the main part of the file. I test this function with the help of the file test_main.py
+The purpose of this project is to have a dataframe as input and then . I test this function with the help of the file test_main.py
 
 ## Preparation
 1. open codespaces 
