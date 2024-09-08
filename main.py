@@ -45,20 +45,20 @@ class Df_Stats:
 
 
 if __name__ == "__main__":
-    url = 'https://raw.githubusercontent.com/selva86/datasets/master/BostonHousing.csv'
-    houses = Df_Stats(url)
+    houses_url = 'https://raw.githubusercontent.com/selva86/datasets/master/BostonHousing.csv'
+    houses = Df_Stats(houses_url)
 
 
-    variables = ['crim', 'zn', 'indus', 'chas',  'rm', 'age']
-    for var in variables:
+    columns = ['crim', 'zn', 'indus', 'chas',  'rm', 'age']
+    for var in columns:
         #print(houses.df)
         print(f'Mean of variable {var}: {houses.var_mean(var)}')
         print(f'Median of variable {var}: {houses.var_median(var)}')
         print(f'Standard Deviation of variable {var}: {houses.var_std(var)}')
 
-    print(houses.stats_summary(variables))
+    print(houses.stats_summary(columns))
 
     houses.plot_hist_var('crim')
     houses.plot_scatter_two_vars('crim', 'indus')
 
-    houses.generate_report('Houses summary', 'Houses_Report', variables)
+    houses.generate_report('Houses summary', 'Houses_Report', columns)

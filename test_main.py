@@ -49,8 +49,8 @@ def test_plot_scatter_two_vars():
     os.remove(filename)
 
 if __name__ == "__main__":
-    url = 'https://raw.githubusercontent.com/selva86/datasets/master/BostonHousing.csv'
-    houses = Df_Stats(url)
+    houses_url = 'https://raw.githubusercontent.com/selva86/datasets/master/BostonHousing.csv'
+    houses = Df_Stats(houses_url)
     test_mean()
     test_median()
     test_std()
