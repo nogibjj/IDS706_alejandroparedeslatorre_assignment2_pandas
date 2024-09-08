@@ -50,11 +50,11 @@ if __name__ == "__main__":
 
 
     columns = ['crim', 'zn', 'indus', 'chas',  'rm', 'age']
-    for var in columns:
+    for col in columns:
         #print(houses.df)
-        print(f'Mean of variable {var}: {houses.var_mean(var)}')
-        print(f'Median of variable {var}: {houses.var_median(var)}')
-        print(f'Standard Deviation of variable {var}: {houses.var_std(var)}')
+        print(f'Mean of variable {col}: {houses.var_mean(col)}')
+        print(f'Median of variable {col}: {houses.var_median(col)}')
+        print(f'Standard Deviation of variable {col}: {houses.var_std(col)}')
 
     print(houses.stats_summary(columns))
 
