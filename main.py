@@ -55,11 +55,11 @@ class Df_Stats:
         pdf.cell(200, 10, txt=title, ln=True, align="C")
 
         # Add summary statistics
-        stats = self.stats_summary(variables)
-        for col in stats.columns:
-            pdf.cell(200, 10, txt=f"{col} statistics", ln=True)
-            for stat in stats.index:
-                pdf.cell(200, 10, txt=f"{stat}: {stats[col][stat]}", ln=True)
+        _stats = self.stats_summary(variables)
+        for _column in _stats.columns:
+            pdf.cell(200, 10, txt=f"{_column} statistics", ln=True)
+            for _stat in _stats.index:
+                pdf.cell(200, 10, txt=f"{stat}: {_stats[_column][_stat]}", ln=True)
 
         # Add plots
         pdf.image("plot_var.png", x=10, y=100, w=100)
