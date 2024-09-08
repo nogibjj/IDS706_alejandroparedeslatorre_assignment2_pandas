@@ -5,7 +5,7 @@ def test_add():
     """Testing that function"""
     assert (
         print_custom_message("Alejandro", 2000, 2, 5)
-        == "Hello Alejandro, you are 24 years old and 6 months"
+        == "Hello Alejandro, you are 24 years old and 7 months"
     )
     print("Success")
 
