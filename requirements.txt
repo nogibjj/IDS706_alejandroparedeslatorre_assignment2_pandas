@@ -6,3 +6,4 @@ python-dateutil==2.9.0
 pandas==2.2.2
 numpy==2.0.0
 ydata_profiling==4.10.0
+fpdf

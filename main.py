@@ -3,7 +3,8 @@ import matplotlib.pyplot as plt
 from ydata_profiling import ProfileReport
 import numpy as np
 import statistics as stat
-
+from fpdf import FPDF
+#import markdown2
 
 class Df_Stats:
     """ Returns principal stats and summary statistics and prints a report """
@@ -39,9 +40,33 @@ class Df_Stats:
         plt.savefig(filename)
         plt.close()
 
-    def generate_report(self, title, name, variables=None):
+    def generate_report(self, title, name, variables=None, report_type="html"):
         profile = ProfileReport(self.df[variables], title=title)
         profile.to_file(f"{name}.html")
+        if report_type == "pdf":
+            self.generate_pdf_report(title, name, variables)
+
+    def generate_pdf_report(self, title, name, variables):
+        pdf = FPDF()
+        pdf.add_page()
+        pdf.set_font("Arial", size=12)
+
+        # Add title
+        pdf.cell(200, 10, txt=title, ln=True, align="C")
+
+        # Add summary statistics
+        stats = self.stats_summary(variables)
+        for col in stats.columns:
+            pdf.cell(200, 10, txt=f"{col} statistics", ln=True)
+            for stat in stats.index:
+                pdf.cell(200, 10, txt=f"{stat}: {stats[col][stat]}", ln=True)
+
+        # Add plots
+        pdf.image("plot_var.png", x=10, y=100, w=100)
+        pdf.image("plot_two_vars.png", x=110, y=100, w=100)
+
+        pdf.output(f"{name}.pdf")
+
 
 
 if __name__ == "__main__":
@@ -61,4 +86,4 @@ if __name__ == "__main__":
     houses.plot_hist_var('crim')
     houses.plot_scatter_two_vars('crim', 'indus')
 
-    houses.generate_report('Houses summary', 'Houses_Report', columns)
+    houses.generate_report('Houses summary', 'Houses_Report', columns, report_type="pdf")
