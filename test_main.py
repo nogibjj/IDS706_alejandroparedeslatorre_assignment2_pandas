@@ -3,6 +3,8 @@ import os
 
 def test_mean():
     """Testing mean"""
+    houses_url = 'https://raw.githubusercontent.com/selva86/datasets/master/BostonHousing.csv'
+    houses = Df_Stats(houses_url)
     assert (
         houses.var_mean('crim')
         == 3.613523557312254
@@ -11,6 +13,8 @@ def test_mean():
 
 def test_median():
     """Testing median"""
+    houses_url = 'https://raw.githubusercontent.com/selva86/datasets/master/BostonHousing.csv'
+    houses = Df_Stats(houses_url)
     assert (
         houses.var_median('crim')
         == 0.25651
@@ -19,6 +23,8 @@ def test_median():
 
 def test_std():
     """Testing standard deviation"""
+    houses_url = 'https://raw.githubusercontent.com/selva86/datasets/master/BostonHousing.csv'
+    houses = Df_Stats(houses_url)
     assert (
         houses.var_std('crim')
         == 8.59304135129577
@@ -28,6 +34,8 @@ def test_std():
 
 def test_plot_hist_var():
     """Testing histogram plot creation"""
+    houses_url = 'https://raw.githubusercontent.com/selva86/datasets/master/BostonHousing.csv'
+    houses = Df_Stats(houses_url)
     filename = "test_histogram.png"
     houses.plot_hist_var('crim', filename)
     
@@ -39,6 +47,8 @@ def test_plot_hist_var():
 
 def test_plot_scatter_two_vars():
     """Testing scatter plot creation"""
+    houses_url = 'https://raw.githubusercontent.com/selva86/datasets/master/BostonHousing.csv'
+    houses = Df_Stats(houses_url)
     filename = "test_scatter.png"
     houses.plot_scatter_two_vars('crim', 'indus', filename)
     
@@ -49,8 +59,8 @@ def test_plot_scatter_two_vars():
     os.remove(filename)
 
 if __name__ == "__main__":
-    houses_url = 'https://raw.githubusercontent.com/selva86/datasets/master/BostonHousing.csv'
-    houses = Df_Stats(houses_url)
+    #houses_url = 'https://raw.githubusercontent.com/selva86/datasets/master/BostonHousing.csv'
+    #houses = Df_Stats(houses_url)
     test_mean()
     test_median()
     test_std()
